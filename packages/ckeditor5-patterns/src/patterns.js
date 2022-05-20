@@ -35,32 +35,22 @@ export default class Patterns extends Plugin {
 			} );
 
 			const items = new Collection()
-			if (typeof editorPatterns !== 'undefined'){
+			var patterns = editor.config.get('patterns');
+			if (patterns !== 'undefined'){
 
-				for (let i = 0; i < editorPatterns.length; i++)
+				for (let i = 0; i < patterns.length; i++)
 				{
 					items.add( {
 						type: 'button',
 						model: new Model( {
 							withText: true,
-							label: editorPatterns[i][0],
+							label: patterns[i].Name,
 							class: 'test class',
-							id: editorPatterns[i][1],
-							tooltip: editorPatterns[i][1]	
+							id: patterns[i].Pattern,
+							tooltip: patterns[i].Pattern
 						})
 					});
 				}
-			}
-			else{
-				items.add( {
-					type: 'button',
-					model: new Model( {
-						withText: true,
-						label: 'No patterns',		
-						id: '',
-						tooltip: false
-					})
-				});		
 			}
 
             // Create a dropdown with a list inside the panel.
