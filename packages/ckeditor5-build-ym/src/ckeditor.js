@@ -41,6 +41,7 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 import Patterns from '../../ckeditor5-patterns/src/patterns';
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
@@ -80,7 +81,8 @@ DecoupledEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-	Patterns
+	Patterns,
+	Base64UploadAdapter
 ];
 
 // Editor configuration.
@@ -111,7 +113,6 @@ DecoupledEditor.defaultConfig = {
 			'blockquote',
 			'uploadImage',
 			'insertTable',
-			'mediaEmbed',
 			'|',
 			'undo',
 			'redo',
