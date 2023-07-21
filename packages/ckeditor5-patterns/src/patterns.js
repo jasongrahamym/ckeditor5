@@ -29,14 +29,14 @@ export default class Patterns extends Plugin {
 			dropdownView.extendTemplate( {
 				attributes: {
 					class: [
-						'ck-heading-dropdown'
+						'ck-heading-dropdown', 'patterns-dropdown'
 					]
 				}
 			} );
 
 			const items = new Collection()
 			var patterns = editor.config.get('patterns');
-			if (patterns !== 'undefined'){
+			if (patterns != null){
 
 				for (let i = 0; i < patterns.length; i++)
 				{
